@@ -4,15 +4,16 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
+class CreateTemperaturesTable extends Migration
 {
     /**
      * Run the migrations.
      */
-    public function up(): void
+    public function up()
     {
         Schema::create('temperatures', function (Blueprint $table) {
             $table->id();
+            $table->decimal('value', 5, 2);  // Menggunakan $table bukan $value
             $table->timestamps();
         });
     }
@@ -20,8 +21,8 @@ return new class extends Migration
     /**
      * Reverse the migrations.
      */
-    public function down(): void
+    public function down()
     {
         Schema::dropIfExists('temperatures');
     }
-};
+}
