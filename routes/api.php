@@ -79,3 +79,9 @@ Route::prefix('v1/devices')->name('devices.')->group(function () {
     Route::delete('/{code}', [DeviceController::class, 'destroy'])->name('delete');
 });
 
+//Route temperatur
+//mengambil data temperatur Get
+//route butuh parameter/argument
+// 1. URL
+//lokasi file controler
+Route :: get('v1/temperatur', [TemperatureController::class,'get Temperatur']);
